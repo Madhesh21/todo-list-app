@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  --paper: #151a16;
+  --paper: #000000;
   --surface: #1d241e;
   --ink: #edf0e9;
   --muted: #a3ac9f;
@@ -30,8 +30,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-image: radial-gradient(#293229 0.65px, transparent 0.65px);
-  background-size: 18px 18px;
+  background-color: var(--paper);
 }
 
 #root {
