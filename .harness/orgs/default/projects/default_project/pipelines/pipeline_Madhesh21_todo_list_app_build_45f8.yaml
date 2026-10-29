@@ -27,45 +27,14 @@ pipeline:
             script: npm run build
         - name: Deploy to Netlify
           run:
-            shell: sh
-            script: "echo \"Checking React build output...\"\r
+            shell: bash
+            script: "echo \"Hello from Harness\"\r
 
-              \r
+              node --version\r
 
-              if [ ! -d dist ]; then\r
+              npm --version\r
 
-              \  echo \"ERROR: dist folder not found\"\r
-
-              \  exit 1\r
-
-              fi\r
-
-              \r
-
-              echo \"Deploying React app to Netlify...\"\r
-
-              \r
-
-              npx --yes netlify-cli@23 deploy --no-build --dir=dist
-              --site=\"$NETLIFY_SITE_ID\" --auth=\"$NETLIFY_AUTH_TOKEN\"\r
-
-              \r
-
-              exit_code=$?\r
-
-              \r
-
-              if [ \"$exit_code\" -ne 0 ]; then\r
-
-              \  echo \"ERROR: Netlify deployment failed\"\r
-
-              \  exit \"$exit_code\"\r
-
-              fi\r
-
-              \r
-
-              echo \"Netlify deployment completed!\""
+              pwd"
             env:
               NETLIFY_AUTH_TOKEN: <+secrets.getValue("netlify_auth_token")>
               NETLIFY_SITE_ID: "61574380-5c1a-49e0-8e76-b5f34004dca0 "
