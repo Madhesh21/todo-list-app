@@ -28,13 +28,13 @@ pipeline:
         - name: Deploy to Netlify
           run:
             shell: bash
-            script: "set -e\r
+            script: "#!/usr/bin/env bash\r
+
+              set -e\r
 
               \r
 
               echo \"Checking React build output...\"\r
-
-              \r
 
               pwd\r
 
@@ -54,17 +54,8 @@ pipeline:
 
               echo \"Deploying to Netlify...\"\r
 
-              \r
-
-              npx --yes netlify-cli@23 deploy \\\r
-
-              \  --no-build \\\r
-
-              \  --dir=dist \\\r
-
-              \  --site=\"$NETLIFY_SITE_ID\" \\\r
-
-              \  --auth=\"$NETLIFY_AUTH_TOKEN\"\r
+              npx --yes netlify-cli@23 deploy --no-build --dir=dist
+              --site=\"$NETLIFY_SITE_ID\" --auth=\"$NETLIFY_AUTH_TOKEN\"\r
 
               \r
 
