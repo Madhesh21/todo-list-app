@@ -96,7 +96,7 @@
   border: 1px solid var(--line);
   border-radius: 7px;
   background: var(--surface);
-  box-shadow: 0 12px 36px rgb(46 58 47 / 5%);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 18%);
 }
 
 .list-heading {
@@ -162,7 +162,7 @@
   border: 1px solid var(--line);
   border-radius: 4px;
   outline: none;
-  background: #fff;
+  background: #171d18;
   color: var(--ink);
   font: inherit;
   font-size: 13px;
@@ -172,12 +172,12 @@
 }
 
 .add-form input::placeholder {
-  color: #a3a39b;
+  color: #909b8e;
 }
 
 .add-form input:focus {
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgb(67 107 77 / 11%);
+  box-shadow: 0 0 0 3px rgb(142 174 132 / 18%);
 }
 
 .add-form button {
@@ -202,7 +202,7 @@
 
 .add-form button:hover:not(:disabled) {
   transform: translateY(-1px);
-  background: var(--green-dark);
+  background: var(--green-hover);
 }
 
 .add-form button:disabled {
@@ -307,16 +307,16 @@
   flex: 0 0 17px;
   display: grid;
   place-items: center;
-  border: 1px solid #c8c9bf;
+  border: 1px solid #59645a;
   border-radius: 50%;
-  background: #fff;
+  background: #171d18;
   transition:
     background 150ms ease,
     border-color 150ms ease;
 }
 
 .todo-checkbox:focus-visible + .checkbox-visual {
-  outline: 3px solid rgb(67 107 77 / 22%);
+  outline: 3px solid rgb(142 174 132 / 30%);
   outline-offset: 2px;
 }
 
@@ -343,16 +343,16 @@
 }
 
 .is-completed .todo-text {
-  color: #96988f;
+  color: #929b90;
   text-decoration: line-through;
-  text-decoration-color: #b7b9af;
+  text-decoration-color: #687365;
 }
 
 .remove-button {
   padding: 8px 0 8px 8px;
   border: 0;
   background: transparent;
-  color: #9a8b86;
+  color: #b9a198;
   font: inherit;
   font-size: 10px;
   opacity: 0;

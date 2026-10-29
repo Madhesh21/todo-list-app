@@ -1,16 +1,18 @@
 :root {
-  --paper: #f7f7f1;
-  --surface: #fffefa;
-  --ink: #292e28;
-  --muted: #82867c;
-  --line: #e8e9df;
-  --green: #527b59;
-  --green-dark: #3e6245;
-  --green-pale: #edf3eb;
-  --coral: #d78c75;
-  --coral-dark: #a45e4c;
+  color-scheme: dark;
+  --paper: #151a16;
+  --surface: #1d241e;
+  --ink: #edf0e9;
+  --muted: #a3ac9f;
+  --line: #343e35;
+  --green: #587d5b;
+  --green-dark: #a8c99e;
+  --green-hover: #426847;
+  --green-pale: #29392c;
+  --coral: #e29a82;
+  --coral-dark: #e5a08b;
   --yellow: #e9c66e;
-  --yellow-pale: #f8f0d9;
+  --yellow-pale: #393321;
   --display:
     "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
@@ -28,7 +30,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-image: radial-gradient(#dfe3d8 0.65px, transparent 0.65px);
+  background-image: radial-gradient(#293229 0.65px, transparent 0.65px);
   background-size: 18px 18px;
 }
 
@@ -44,13 +46,13 @@ input {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgb(82 123 89 / 30%);
+  outline: 3px solid rgb(146 190 139 / 42%);
   outline-offset: 3px;
 }
 
 ::selection {
   color: var(--ink);
-  background: #dce8d9;
+  background: #3a523b;
 }
 
 @media (max-width: 600px) {
