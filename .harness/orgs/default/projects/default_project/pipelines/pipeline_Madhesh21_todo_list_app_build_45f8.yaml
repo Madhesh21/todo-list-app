@@ -28,15 +28,11 @@ pipeline:
         - name: Deploy to Netlify
           run:
             shell: sh
-            script: "set -eu\r
+            script: "echo \"Checking React build output...\"\r
 
               \r
 
-              echo \"Checking React build output...\"\r
-
-              \r
-
-              if [ ! -d \"dist\" ]; then\r
+              if [ ! -d dist ]; then\r
 
               \  echo \"ERROR: dist folder not found\"\r
 
@@ -50,15 +46,22 @@ pipeline:
 
               \r
 
-              npx --yes netlify-cli@23 deploy \\\r
+              npx --yes netlify-cli@23 deploy --no-build --dir=dist
+              --site=\"$NETLIFY_SITE_ID\" --auth=\"$NETLIFY_AUTH_TOKEN\"\r
 
-              \  --no-build \\\r
+              \r
 
-              \  --dir=dist \\\r
+              exit_code=$?\r
 
-              \  --site=\"$NETLIFY_SITE_ID\" \\\r
+              \r
 
-              \  --auth=\"$NETLIFY_AUTH_TOKEN\"\r
+              if [ \"$exit_code\" -ne 0 ]; then\r
+
+              \  echo \"ERROR: Netlify deployment failed\"\r
+
+              \  exit \"$exit_code\"\r
+
+              fi\r
 
               \r
 
