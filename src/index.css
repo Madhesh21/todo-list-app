@@ -1,0 +1,60 @@
+:root {
+  --paper: #f7f7f1;
+  --surface: #fffefa;
+  --ink: #292e28;
+  --muted: #82867c;
+  --line: #e8e9df;
+  --green: #527b59;
+  --green-dark: #3e6245;
+  --green-pale: #edf3eb;
+  --coral: #d78c75;
+  --coral-dark: #a45e4c;
+  --yellow: #e9c66e;
+  --yellow-pale: #f8f0d9;
+  --display:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: radial-gradient(#dfe3d8 0.65px, transparent 0.65px);
+  background-size: 18px 18px;
+}
+
+#root {
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(82 123 89 / 30%);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--ink);
+  background: #dce8d9;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 15px;
+  }
+}
