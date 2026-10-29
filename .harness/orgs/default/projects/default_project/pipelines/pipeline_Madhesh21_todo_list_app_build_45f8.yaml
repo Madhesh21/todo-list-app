@@ -25,5 +25,50 @@ pipeline:
           run:
             shell: bash
             script: npm run build
+        - name: Deploy to Netlify
+          run:
+            shell: sh
+            script: "set -eu\r
+
+              \r
+
+              echo \"Checking React build output...\"\r
+
+              \r
+
+              if [ ! -d \"dist\" ]; then\r
+
+              \  echo \"ERROR: dist folder not found\"\r
+
+              \  exit 1\r
+
+              fi\r
+
+              \r
+
+              echo \"Deploying React app to Netlify...\"\r
+
+              \r
+
+              npx --yes netlify-cli@23 deploy \\\r
+
+              \  --no-build \\\r
+
+              \  --dir=dist \\\r
+
+              \  --site=\"$NETLIFY_SITE_ID\" \\\r
+
+              \  --auth=\"$NETLIFY_AUTH_TOKEN\"\r
+
+              \r
+
+              echo \"Netlify deployment completed!\""
+            env:
+              NETLIFY_AUTH_TOKEN: <+secrets.getValue("netlify_auth_token")>
+              NETLIFY_SITE_ID: "61574380-5c1a-49e0-8e76-b5f34004dca0 "
+            container:
+              image: node:22
+              connector: Docker_Hub_Public
+          id: deploy_to_netlify
   tags:
     onboarding: "true"
